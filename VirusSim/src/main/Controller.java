@@ -18,7 +18,7 @@ public class Controller {
 		pView.getSurface().setLocation((Toolkit.getDefaultToolkit().getScreenSize().width/2)-(pView.width/2), (Toolkit.getDefaultToolkit().getScreenSize().height/2)-(pView.height/2));
 		pView.getSurface().setResizable(false);
 		
-		spielfeld = new Spielfeld(pView, pView.width, pView.height);
+		spielfeld = new Spielfeld(pView, 500, 500);
 	}
 	
 	public void draw() {
