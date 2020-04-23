@@ -15,6 +15,7 @@ public class VirusSimHandler extends PApplet {
 		size(0,0);
 	}
 	
+	//Alles wird am Controller weitergegeben
 	public void setup() {
 		controller.setup();
 	}
