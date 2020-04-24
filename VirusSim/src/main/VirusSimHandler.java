@@ -12,7 +12,7 @@ public class VirusSimHandler extends PApplet {
 	Controller controller = new Controller(this);
 	
 	public void settings() {
-		size(0,0);
+		size(10,10);
 	}
 	
 	//Alles wird am Controller weitergegeben

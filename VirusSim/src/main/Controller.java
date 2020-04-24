@@ -10,7 +10,7 @@ public class Controller {
 		this.pView = pView;
 	}
 	
-	Spielfeld spielfeld;
+	Canvas canvas;
 	
 	public void setup() {
 		pView.getSurface().setTitle("VirusSim v1");
@@ -18,13 +18,13 @@ public class Controller {
 		pView.getSurface().setLocation((Toolkit.getDefaultToolkit().getScreenSize().width/2)-(pView.width/2), (Toolkit.getDefaultToolkit().getScreenSize().height/2)-(pView.height/2));
 		pView.getSurface().setResizable(false);
 		
-		spielfeld = new Spielfeld(pView, 1, 1);
+		canvas = new Canvas(pView, 400, 400);
 	}
 	
 	public void draw() {
 		pView.smooth();
 		pView.noStroke();
 		pView.background(80);
-		spielfeld.draw();
+		canvas.draw();
 	}
 }
