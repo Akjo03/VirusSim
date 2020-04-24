@@ -28,6 +28,7 @@ public class Canvas {
 	//Zeichnet das Spielfeld
 	public void drawCanvas() {
 		for (int personCount = 0; personCount < personen.size(); personCount++) {
+			personen.get(personCount).setColor(pView.color(0, 32, 192));
 			personen.get(personCount).drawPerson();
 		}
 	}
