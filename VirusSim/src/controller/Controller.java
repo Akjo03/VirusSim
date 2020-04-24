@@ -1,7 +1,9 @@
-package main;
+package controller;
 
 import java.awt.Toolkit;
 
+import model.Canvas;
+import model.Settings;
 import processing.core.*;
 
 /**
@@ -26,7 +28,7 @@ public class Controller {
 		settings = new Settings();
 		
 		pView.getSurface().setTitle("VirusSim v1"); //Fenstertitel
-		pView.getSurface().setSize(settings.windowWidth, settings.windowHeight); 	//Fenstergrösse
+		pView.getSurface().setSize(settings.getWindowWidth(), settings.getWindowHeight()); 	//Fenstergrösse
 		
 		//Fensterposition in die Mitte des Bildschirms
 		pView.getSurface().setLocation((Toolkit.getDefaultToolkit().getScreenSize().width/2)-(pView.width/2), (Toolkit.getDefaultToolkit().getScreenSize().height/2)-(pView.height/2)); 
@@ -35,7 +37,7 @@ public class Controller {
 		
 		canvas = new Canvas(pView, pView.width, pView.height); //Erstellt ein neuer Canvas in der Grösse des Fensters
 		
-		canvas.createPersons(settings.anzahlPersonen);
+		canvas.createPersons(settings.getAnzahlPersonen(), settings.getAnzahlInfizierte());
 	}
 	
 	public void draw() {

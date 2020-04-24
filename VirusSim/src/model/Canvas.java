@@ -1,7 +1,9 @@
-package main;
+package model;
 
 import java.util.ArrayList;
 
+import model.Persons.HealthyPerson;
+import model.Persons.InfectedPerson;
 import processing.core.*;
 
 /**
@@ -19,7 +21,7 @@ public class Canvas {
 	private static int backgroundColor;
 	//private Wand wand;
 	
-	Canvas(PApplet pView, int width, int height) {
+	public Canvas(PApplet pView, int width, int height) {
 		this.pView = pView;
 		Canvas.width = width;
 		Canvas.height = height;
@@ -28,17 +30,17 @@ public class Canvas {
 	//Zeichnet das Spielfeld
 	public void drawCanvas() {
 		for (int personCount = 0; personCount < personen.size(); personCount++) {
-			personen.get(personCount).setColor(pView.color(0, 32, 192));
 			personen.get(personCount).drawPerson();
 		}
 	}
 	
 	//Erstellt alle Personen
-	public void createPersons(int anzahl) {
-		for (int personCount = 0; personCount < anzahl; personCount++) {
-			personen.add(new Person(pView, pView.random(32, pView.width-32), pView.random(32, pView.height-32)));
-			personen.get(personCount).setDirX(pView.random(-2, 2));
-			personen.get(personCount).setDirY(pView.random(-2, 2));
+	public void createPersons(int anzahlHealthy, int anzahlInfected) {
+		for (int personCount = 0; personCount < anzahlHealthy; personCount++) {
+			personen.add(new HealthyPerson(pView));
+		}
+		for (int personCount = 0; personCount < anzahlInfected; personCount++) {
+			personen.add(new InfectedPerson(pView));
 		}
 	}
 	
