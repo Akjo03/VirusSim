@@ -20,12 +20,12 @@ public class Person {
     }
 
     public void drawPerson() {
+    	pView.beginShape();
         velocity.add(new PVector(dirX, dirY)); // Fügt die Geschwindigkeit der Person hinzu
         pView.fill(color);
         pView.ellipse(velocity.x, velocity.y, 20, 20); // Zeichnet den Kreis für die Person
+        pView.endShape();
     }
-    
-    
     
     
     

@@ -37,11 +37,10 @@ public class Canvas {
 	public void createPersons(int anzahl) {
 		for (int personCount = 0; personCount < anzahl; personCount++) {
 			personen.add(new Person(pView, pView.random(32, pView.width-32), pView.random(32, pView.height-32)));
+			personen.get(personCount).setDirX(pView.random(-2, 2));
+			personen.get(personCount).setDirY(pView.random(-2, 2));
 		}
 	}
-	
-	
-	
 	
 	//GETTERS AND SETTERS
 

@@ -23,8 +23,10 @@ public class Controller {
 	Settings settings;
 	
 	public void setup() {
+		settings = new Settings();
+		
 		pView.getSurface().setTitle("VirusSim v1"); //Fenstertitel
-		pView.getSurface().setSize(1920, 1080); 	//Fenstergrösse
+		pView.getSurface().setSize(settings.windowWidth, settings.windowHeight); 	//Fenstergrösse
 		
 		//Fensterposition in die Mitte des Bildschirms
 		pView.getSurface().setLocation((Toolkit.getDefaultToolkit().getScreenSize().width/2)-(pView.width/2), (Toolkit.getDefaultToolkit().getScreenSize().height/2)-(pView.height/2)); 
@@ -32,7 +34,6 @@ public class Controller {
 		pView.getSurface().setResizable(false); //Fenster kann nicht vergrössert/verkleinert werden.
 		
 		canvas = new Canvas(pView, pView.width, pView.height); //Erstellt ein neuer Canvas in der Grösse des Fensters
-		settings = new Settings();
 		
 		canvas.createPersons(settings.anzahlPersonen);
 	}
