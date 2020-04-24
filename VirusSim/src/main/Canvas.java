@@ -14,7 +14,7 @@ import processing.core.*;
 public class Canvas {
 	PApplet pView;
 	
-	private ArrayList<Person> personen;
+	private ArrayList<Person> personen = new ArrayList<Person>();
 	private static int width, height;
 	private static int backgroundColor;
 	//private Wand wand;
@@ -27,12 +27,16 @@ public class Canvas {
 	
 	//Zeichnet das Spielfeld
 	public void drawCanvas() {
-		// TODO Zeichne Canvas
+		for (int personCount = 0; personCount < personen.size(); personCount++) {
+			personen.get(personCount).drawPerson();
+		}
 	}
 	
 	//Erstellt alle Personen
 	public void createPersons(int anzahl) {
-		//TODO Erstelle Personen
+		for (int personCount = 0; personCount < anzahl; personCount++) {
+			personen.add(new Person(pView, pView.random(32, pView.width-32), pView.random(32, pView.height-32)));
+		}
 	}
 	
 	
